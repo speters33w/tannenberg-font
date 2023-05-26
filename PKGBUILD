@@ -24,15 +24,15 @@ _afmdir=/usr/share/fonts/type1/
 # Only the original files from TypeOasis are installed, this package does not include TeX .tfm files.
 # TeX .tfm files can be generated from the included Type 1 files with a utility.
 
-pkgname=("ttf-$fontname" "type1-$fontname" "webfonts-$fontname")
-# pkgname=("ttf-$fontname")  # use to install a single package locally.
+#pkgname=("ttf-$fontname" "type1-$fontname" "webfonts-$fontname")
+pkgname=("ttf-$fontname")  # use to install a single package locally.
 licensefile="ffc.html"
 pkgver=2.0.0
 pkgrel=1
 # name=""
 pkgdesc="Tannenberg is a Fraktur-family blackletter typeface, developed in Germany between 1933 and 1935 digitized by Dieter Steffmann"
 arch=(any)
-url=("https://github.com/speters33w/tannenberg-font")
+url="https://github.com/speters33w/tannenberg-font"
 license=("custom:1001Fonts Free For Commercial Use License (FFC)") 
   # This is the current license for Dieter Steffman's fonts. See http://www.steffmann.de/wordpress/test-2/typoasis/ and https://www.1001fonts.com/tannenberg-font.html .
 depends=()
@@ -57,7 +57,7 @@ install_license(){
 
 install_fonts(){
 #  mkdir -p "$pkgdir"/usr/share/fonts/"$1"
-  install -Dm644 -t "$pkgdir"/usr/share/fonts/"$1" "$srcdir"/usr/share/fonts/"$1"/*."$1"
+  install -Dm644 -t "$pkgdir"/usr/share/fonts/"${1^^}" "$srcdir"/usr/share/fonts/"$1"/*."$1"
 }
 
 install_postscript(){
