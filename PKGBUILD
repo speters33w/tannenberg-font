@@ -34,7 +34,7 @@ pkgdesc="Tannenberg is a Fraktur-family blackletter typeface, developed in Germa
 arch=(any)
 url="https://github.com/speters33w/tannenberg-font"
 license=("custom:1001Fonts Free For Commercial Use License (FFC)") 
-  # This is the current license for Dieter Steffman's fonts. See http://www.steffmann.de/wordpress/test-2/typoasis/ and https://www.1001fonts.com/tannenberg-font.html .
+  # This is the current license for Dieter Steffmann's fonts. See http://www.steffmann.de/wordpress/test-2/typoasis/ and https://www.1001fonts.com/tannenberg-font.html .
 depends=()
 makedepends=()
 optdepends=()
@@ -67,14 +67,14 @@ install_postscript(){
 
 install_webfonts(){
   if [ "$_include_webfonts" = true ] ; then
-	mkdir -p "$pkgdir"/"$_webfontdir"
-	if [ ! -f "$_webfontdir"/"$fontname.bold.woff" ] ; then 
+    mkdir -p "$pkgdir"/"$_webfontdir"
+    if [ ! -f "$_webfontdir"/"$fontname.bold.woff" ] ; then 
       install -Dm644 -t "$pkgdir"/"$_webfontdir" "$srcdir"/www/fonts/*.woff
-	fi
+    fi
     if [ ! -f "$_webfontdir/$fontname.bold.woff2" ] ; then
       install -Dm644 -t "$pkgdir"/"$_webfontdir" "$srcdir"/www/fonts/*.woff2
     fi
-	echo -e "\e[32mWebfonts will be installed in ${_webfontdir}.\e[0m" 
+    echo -e "\e[32mWebfonts will be installed in ${_webfontdir}.\e[0m" 
   fi	
 }
 
