@@ -28,14 +28,14 @@ _afmdir=/usr/share/fonts/type1/
 
 #pkgname=("ttf-$_fontname" "type1-$_fontname" "webfonts-$_fontname")
 pkgname=("ttf-$_fontname")  # use to install a single package locally.
-_licensefile="ffc.html"
 pkgver=1.002
 pkgrel=3
 # name=""
 pkgdesc="Tannenberg is a Fraktur-family blackletter typeface, developed in Germany between 1933 and 1935 digitized by Dieter Steffmann."
 arch=(any)
 url="https://github.com/speters33w/tannenberg-font"
-license=("custom:1001Fonts Free For Commercial Use License (FFC)") 
+license=("custom:1001Fonts Free For Commercial Use License (FFC)")
+_licensefile="ffc.html"
   # This is the current license for Dieter Steffmann's fonts. 
   # See http://www.steffmann.de/wordpress/test-2/typoasis/ , https://www.1001fonts.com/users/steffmann/ , and https://www.1001fonts.com/tannenberg-font.html .
 depends=()
@@ -43,7 +43,7 @@ makedepends=()
 optdepends=()
 conflicts=()
 source=("https://github.com/speters33w/tannenberg-font/raw/main/future/tannenberg-font.tar.gz")
-sha256sums=("fbd0fd13239934e4833066bc93d47b8649deb81b230528216181c0353844ced0")
+sha256sums=("bb4d83df62df8074dfb9c69fd20b727ca3795e14c86466ea3981d065e5e7a6ea")
   # Compiled from source files at https://www.1001fonts.com/tannenberg-font.html , http://moorstation.org/typoasis/designers/steffmann/samples/t/tannenbg.htm 
   # and generated webfonts using https://www.fontsquirrel.com/tools/webfont-generator .
 

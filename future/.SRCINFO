@@ -6,6 +6,6 @@ pkgbase = ttf-tannenberg
 	arch = any
 	license = custom:1001Fonts Free For Commercial Use License (FFC)
 	source = https://github.com/speters33w/tannenberg-font/raw/main/tannenberg-font.tar.gz
-	sha256sums = e5261b8ccac3aa18a1f8715f329708164a45816913e86c0da8f8e69aa1fe8a5d
+	sha256sums = bb4d83df62df8074dfb9c69fd20b727ca3795e14c86466ea3981d065e5e7a6ea
 
 pkgname = ttf-tannenberg
