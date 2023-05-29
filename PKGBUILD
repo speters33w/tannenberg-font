@@ -11,7 +11,7 @@ _include_webfonts=false
 
 _webfontdir=$HOME/www/fonts
 # Directory for woff and woff2 files.
-# Change to install webfonts in an alternate location, example: "/www/webfobts/.
+# Change to install webfonts in an alternate location, example: "/www/webfonts/.
 
 _pfmdir=/usr/share/fonts/type1/
 # Directory for postscript type 1 .pfm and .pfb files.
@@ -53,13 +53,12 @@ prepare(){
 
 install_license(){
   if [ ! -f "/usr/share/licenses/$fontname-font/$licensefile" ] ; then
-#    mkdir -p "$pkgdir"/usr/share/licenses/$fontname-font"
     install -Dm644 -t "$pkgdir"/"usr/share/licenses"/"$fontname-font" "$srcdir"/"usr/share/licenses"/"$fontname-font"/*.*
   fi
 }
 
 install_fonts(){
-#  mkdir -p "$pkgdir"/usr/share/fonts/"$1"
+  #install -Dm644 -t "$pkgdir"/usr/share/fonts/"$fontname" "$srcdir"/usr/share/fonts/"${1^^}"/*."$1"
   install -Dm644 -t "$pkgdir"/usr/share/fonts/"${1^^}" "$srcdir"/usr/share/fonts/"${1^^}"/*."$1"
 }
 
@@ -76,13 +75,16 @@ install_webfonts(){
     fi
     if [ ! -f "$_webfontdir/$fontname.bold.woff2" ] ; then
       install -Dm644 -t "$pkgdir"/"$_webfontdir" "$srcdir"/www/fonts/*.woff2
+      echo -e "\e[32mWebfonts will be installed in ${_webfontdir}.\e[0m"
     fi
-    echo -e "\e[32mWebfonts will be installed in ${_webfontdir}.\e[0m" 
+    if [ ! -f "$_webfontdir/$fontname-stylesheet.css" ] ; then
+      install -Dm644 -t "$pkgdir"/"$_webfontdir" "$srcdir"/www/fonts/"$fontname-stylesheet.css"
+    fi 
   fi	
 }
 
 package_ttf-tannenberg() {
-  conflicts+=("otf-$fontname")
+  #conflicts+=("otf-$fontname")
   install_license
   install_fonts ttf
   install_webfonts
